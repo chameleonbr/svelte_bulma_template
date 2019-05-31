@@ -17,8 +17,10 @@
   "scripts": {
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
-    "dev": "run-p start:dev autobuild",
+    "dev": "run-p start:dev autobuild css-watch",
     "start": "sirv public",
-    "start:dev": "sirv public --dev"
+    "start:dev": "sirv public --dev",
+    "css-build": "node-sass --omit-source-map-url src/base.scss public/base.css",
+    "css-watch": "npm run css-build -- --watch"
   }
 }
